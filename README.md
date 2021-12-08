@@ -1,6 +1,6 @@
 # Some algorithms and data structures
 
-Some algoritms implemented for classes in college(Federal University of ABC-UFABC)
+Some algoritms implemented for classes in university(Federal University of ABC-UFABC)
 
 ## Algorithms
 
