@@ -15,4 +15,3 @@ Some algoritms implemented for classes in university(Federal University of ABC-U
 - [ ] Add digraphs algorithms
 - [ ] Add unweighted graphs
 - [ ] Add dijkstra algorithm
-# Algorithms
