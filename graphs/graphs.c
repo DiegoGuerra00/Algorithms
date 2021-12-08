@@ -3,12 +3,12 @@
 #include "graphs.h"
 
 int main() {
-    Graph G = createGraph(5);
+    /* Graph G = createGraph(5);
     graphInsertEdge(G, 0, 3, 5);
     graphInsertEdge(G, 2, 1, 9);
     graphInsertEdge(G, 4, 2, 7);
     graphInsertEdge(G, 3, 1, 1);
-    graphInsertEdge(G, 2, 3, 13);
+    graphInsertEdge(G, 2, 3, 13); */
 
     // DFS(G, 0, 4);
     // BFS(G, 0);
@@ -88,7 +88,6 @@ Edge kruskal(int V, int E, Edge edges) {
     Edge MST = malloc((V - 1) * sizeof(*MST));
 
     // Sorts the edges array with bubble sort
-    // TODO Better sorting
     for(int i = 0; i < E; i++) {
         for(int j = 0; j < E - i; j++) {
             if(j+1 < E) {
