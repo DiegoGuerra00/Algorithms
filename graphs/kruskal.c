@@ -10,9 +10,6 @@ int main() {
     graphInsertEdge(G, 3, 1, 1);
     graphInsertEdge(G, 2, 3, 13); */
 
-    // DFS(G, 0, 4);
-    // BFS(G, 0);
-
     return 0;
 }
 

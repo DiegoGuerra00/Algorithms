@@ -32,7 +32,7 @@ struct graph{
     int E;
     link *adj;
     int *visited;
-    int *previous; //armazena qual vértice foi visitado antes, para contruir um caminho
+    int *previous;
 };
 
 /**
