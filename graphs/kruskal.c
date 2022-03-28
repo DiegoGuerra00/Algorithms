@@ -88,6 +88,7 @@ Edge kruskal(int V, int E, Edge edges) {
     Edge MST = malloc((V - 1) * sizeof(*MST));
 
     // Sorts the edges array with bubble sort
+    // TODO better sort
     for(int i = 0; i < E; i++) {
         for(int j = 0; j < E - i; j++) {
             if(j+1 < E) {
@@ -117,74 +118,4 @@ Edge kruskal(int V, int E, Edge edges) {
     }
     
     return MST;
-}
-
-Queue createQueue(int size) {
-    Queue q = malloc(sizeof(*q));
-    q->front = 0;
-    q->rear = -1;
-    q->items = malloc(size * sizeof(int));
-    q->elementCount = 0;
-    q->size = size;
-
-    return q;
-}
-
-int dequeue(Queue q) {
-    if(q->elementCount > 0) {
-        int data = q->items[q->front];
-        q->front = (q->front+1) % q->size;
-        q->elementCount--;
-
-        return data;
-    }
-}
-
-void enqueue(Queue q, int n) {
-    if(q->elementCount < q->size) {
-        q->rear = (q->rear+1) % q->size;
-        q->items[q->rear] = n;
-        q->elementCount++;
-    }
-}
-
-int queueIsEmpty(Queue q) {
-    return q->elementCount == 0;
-}
-
-void DFS(Graph G, int obj, int start) {
-    G->visited[start] = 1;
-    if(start == obj) {
-        return;
-    }
-    link tmp = G->adj[start];
-    while(tmp) {
-        if(G->visited[tmp->w] == 0) {
-            G->previous[tmp->w] = start;
-            DFS(G, obj, tmp->w);
-        }
-        tmp = tmp->next;
-    }
-}
-
-void BFS(Graph G, int start) {
-    Queue q = createQueue(G->V);
-    G->visited[start] = 1;
-    enqueue(q, start);
-    link tmp;
-
-    while(!queueIsEmpty(q)) {
-        int u = dequeue(q);
-        tmp = G->adj[u];
-        while(tmp) {
-            if(G->visited[tmp->w] == 0) {
-                G->visited[tmp->w] = 1;
-                enqueue(q, tmp->w);
-                G->previous[tmp->w] = u; 
-            }
-            tmp = tmp->next;
-        }
-    }
-
-    return;
 }

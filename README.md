@@ -10,8 +10,7 @@ Some algoritms implemented for classes in university(Federal University of ABC-U
    - Kruskal
 
 ## TODO
-
-- [ ] Add AI algorithms
+- [x] Reorganize repo
 - [ ] Add digraphs algorithms
 - [ ] Add unweighted graphs
 - [ ] Add dijkstra algorithm
